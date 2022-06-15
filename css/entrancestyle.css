@@ -1,13 +1,15 @@
 
 body {
   margin: 0px;
-  background-color: black;
+  background-color: #132525;
   font-family: roboto_condensedregular, Arial, Helvetica, sans-serif;
   font-size: 14px;
   overflow: hidden;
 }
 
 * { box-sizing: border-box; }
+
+table { color: inherit; }
 
 .row:before,
 .row:after { content: " "; display: table; }
@@ -47,7 +49,7 @@ body {
 }
 
 #tracker .item,
-#tracker .boss { opacity: .25; }
+#tracker .boss { opacity: .25; background-size: 80%; background-repeat: no-repeat; background-position: center center; }
 #tracker .item[class*="active"],
 #tracker .boss.defeated { opacity: 1; }
 #tracker .bigkey { opacity: .25; }
@@ -214,7 +216,7 @@ body {
   position: absolute;
   bottom: 0px;
   color: white;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   font-size: 12px;
   text-align: center;
 }
@@ -417,7 +419,7 @@ body {
 
 .separatortop { border-top: 1px dotted gray; margin-top: -1px; }
 
-.tab { padding: 4px; border: 2px solid white; color: blue; user-select: none; cursor: pointer; }
+.tab { padding: 4px; border: 2px solid black; user-select: none; cursor: pointer; }
 .tab.active { border-color: black; color: black; background-color: #E0E0E0; cursor: default; }
 
 #bossMap0, #dungeon0 { left: 46.8%; top: 38.8%; }
@@ -505,6 +507,48 @@ body {
 
 #summaryModal { width: 884px; left: 456px; }
 #summaryModalMain { width: 800px; height: 300px; left: 40px; top: 50px; }
+
+#hc_m, #hc_w, #hc_e {
+	color: white;
+	background-color: #14439a;
+}
+#dp_m, #dp_w, #dp_e {
+	color: black;
+	background-color: #cdca27;
+}
+#ct, #ep, #dp_n, #toh,
+#pod, #sp, #sw, #tt, #ip,
+#mm, #gt,
+#link, #sanc, #mount {
+	color: black;
+	background-color: #00eaff;
+}
+#tr_m, #tr_w, #tr_e, #tr_b {
+	color: white;
+	background-color: #d44a00;
+}
+#rupee, #shop, #item {
+	color: black;
+	background-color: #51ff3a;
+}
+#ganon {
+	color: white;
+	background-color: black;
+}
+#magic, #kid, #smith, #bat, #lib,
+#saha, #mimc, #dam,
+#bomb, #bump, #spike, #hook {
+	color: black;
+	background-color: #ff7b00;
+}
+#dark {
+	color: white;
+	background-color: #2433ff;
+}
+#connector {
+	color: black;
+	background-color: #ff00f9;
+}
 
 #entranceMap0 { left: 28%; top: 72%; z-index: 2; }
 #entranceMap1 { left: 24.5%; top: 67%; z-index: 2; }

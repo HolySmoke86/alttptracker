@@ -214,7 +214,10 @@
 				caption: 'Skull Woods',
 				is_beaten: false,
 				is_beatable: function() {
-					return canReachNWDW() && ((items.moonpearl || canBunnyPocket())) ? window.SWBoss() : 'unavailable';
+					if (flags.v311 === 'Y') {
+						return canReachNWDW() && ((items.moonpearl || canBunnyPocket())) ? window.SWBoss() : 'unavailable';
+					}
+					return canReachNWDW() && items.moonpearl ? window.SWBoss() : 'unavailable';
 				},
 				can_get_chest: function() {
 					return canReachNWDW() ? window.SWChests() : 'unavailable';
@@ -233,11 +236,17 @@
 				is_beaten: false,
 				is_beatable: function() {
 					if (!items.firerod && (!items.bombos || items.bombos && (items.sword == 0 && flags.swordmode != 'S'))) return 'unavailable';
-					return (items.glove === 2) || (canReachSDW() && (items.moonpearl || glitchLinkState()) && (flags.glitches === 'M' && items.mirror)) ? window.IPBoss() : 'unavailable';
+					if (flags.v311 === 'Y') {
+						return (items.glove === 2) || (canReachSDW() && (items.moonpearl || glitchLinkState()) && (flags.glitches === 'M' && items.mirror)) ? window.IPBoss() : 'unavailable';
+					}
+					return (items.glove === 2) || (canReachSDW() && (items.moonpearl || glitchLinkState()) && (((items.boots || flags.glitches === 'M') && items.flippers) || (flags.glitches === 'M' && items.mirror))) ? window.IPBoss() : 'unavailable';
 				},
 				can_get_chest: function() {
 					if (!items.firerod && (!items.bombos || items.bombos && (items.sword == 0 && flags.swordmode != 'S')) && flags.glitches !== 'M' && flags.glitches !== 'H') return 'unavailable';
-					return (items.glove === 2) || (canReachSDW() && (items.moonpearl || glitchLinkState())  && (flags.glitches === 'M' && items.mirror)) ? window.IPChests() : 'unavailable';
+					if (flags.v311 === 'Y') {
+						return (items.glove === 2) || (canReachSDW() && (items.moonpearl || glitchLinkState())  && (flags.glitches === 'M' && items.mirror)) ? window.IPChests() : 'unavailable';
+					}
+					return (items.glove === 2) || (canReachSDW() && (items.moonpearl || glitchLinkState())  && (((items.boots || flags.glitches === 'M') && items.flippers) || (flags.glitches === 'M' && items.mirror))) ? window.IPChests() : 'unavailable';
 				}
 			}, { // [8]
 				caption: 'Misery Mire {medallion0} [{boots}/{hookshot}]',
@@ -712,7 +721,10 @@
 				caption: 'Ol\' Stumpy',
 				is_opened: false,
 				is_available: function() {
-					return (items.moonpearl || glitchLinkState()) && canReachSDW() ? 'available' : 'unavailable';
+					if (flags.v311 === 'Y') {
+						return (items.moonpearl || glitchLinkState()) && canReachSDW() ? 'available' : 'unavailable';
+					}
+					return (items.moonpearl || glitchLinkState() || items.mirror) && canReachSDW() ? 'available' : 'unavailable';
 				}
 			}, { // [68]
 				caption: 'Lazy Drunk Kid: Distract him with {bottle} because he can\'t lay off the sauce!',
@@ -922,7 +934,10 @@
 				caption: 'Mad Batter {hammer}/{mirror} + {powder}',
 				is_opened: false,
 				is_available: function() {
-					return items.powder && (items.hammer || flags.glitches === 'M' || (items.mirror && (items.moonpearl && ((items.glove === 2 && canReachNWDW()) || (canSpinSpeed() && canReachNEDW()))))) ? 'available' : 'unavailable';
+					if (flags.v311 === 'Y') {
+						return items.powder && (items.hammer || flags.glitches === 'M' || (items.mirror && (items.moonpearl && ((items.glove === 2 && canReachNWDW()) || (canSpinSpeed() && canReachNEDW()))))) ? 'available' : 'unavailable';
+					}
+					return items.powder && (items.hammer || items.boots || flags.glitches === 'M' || (items.mirror && (items.moonpearl && ((items.glove === 2 && canReachNWDW()) || (canSpinSpeed() && canReachNEDW()))))) ? 'available' : 'unavailable';
 				}
 			}, { // [101]
 				caption: 'Take the frog home {mirror} / Save+Quit',

@@ -742,26 +742,8 @@
 			}
 	
 			if (found) {
-				var c = dungeonChests(dungeonID,entranceAvail,entranceBunny);
-				if (c === 'available') {
-					document.getElementById('chest'+dungeonID).style.backgroundColor = (flags.colormode === "N" ? 'lime' : '#055fe6');
-					document.getElementById('chest'+dungeonID).style.color = 'black';
-				} else if (c === 'darkavailable') {
-					document.getElementById('chest'+dungeonID).style.backgroundColor = (flags.colormode === "N" ? 'blue' : '#034f6d');
-					document.getElementById('chest'+dungeonID).style.color = 'white';
-				} else if (c === 'possible') {
-					document.getElementById('chest'+dungeonID).style.backgroundColor = (flags.colormode === "N" ? 'yellow' : '#faf600');
-					document.getElementById('chest'+dungeonID).style.color = 'black';
-				} else if (c === 'darkpossible') {
-					document.getElementById('chest'+dungeonID).style.backgroundColor = (flags.colormode === "N" ? 'purple' : '#cdbd00');
-					document.getElementById('chest'+dungeonID).style.color = 'white';
-				} else if (c === 'unavailable') {
-					document.getElementById('chest'+dungeonID).style.backgroundColor = (flags.colormode === "N" ? 'red' : '#c46902');
-					document.getElementById('chest'+dungeonID).style.color = 'white';
-				} else if (c === 'information') {
-					document.getElementById('chest'+dungeonID).style.backgroundColor = (flags.colormode === "N" ? 'orange' : '#d53ae6');
-					document.getElementById('chest'+dungeonID).style.color = 'black';
-				}
+				document.getElementById('chest'+dungeonID).style.backgroundColor = 'white';
+				document.getElementById('chest'+dungeonID).style.color = 'black';
 				if (dungeonID < 10) {
 					document.getElementById('entranceBoss'+dungeonID).style.visibility = (!dungeons[dungeonID].is_beaten && flags.overworldshuffle === 'N' ? 'visible' : 'hidden');
 					document.getElementById('entranceBoss'+dungeonID).style.background = ConvertBossToColor(dungeonBoss(dungeonID,entranceAvail,entranceBunny));

@@ -1623,53 +1623,6 @@
 		}
 		
 		document.getElementById('entranceModalNote').focus();
-		
-		document.getElementById('hc_m').style.backgroundColor = '#14439a';
-		document.getElementById('hc_w').style.backgroundColor = '#14439a';
-		document.getElementById('hc_e').style.backgroundColor = '#14439a';
-		document.getElementById('ct').style.backgroundColor = '#00eaff';
-		document.getElementById('ep').style.backgroundColor = '#00eaff';
-		document.getElementById('dp_m').style.backgroundColor = '#cdca27';
-		document.getElementById('dp_w').style.backgroundColor = '#cdca27';
-		document.getElementById('dp_e').style.backgroundColor = '#cdca27';
-		document.getElementById('dp_n').style.backgroundColor = '#00eaff';
-		document.getElementById('toh').style.backgroundColor = '#00eaff';
-		document.getElementById('pod').style.backgroundColor = '#00eaff';
-		document.getElementById('sp').style.backgroundColor = '#00eaff';
-		document.getElementById('sw').style.backgroundColor = '#00eaff';
-		document.getElementById('tt').style.backgroundColor = '#00eaff';
-		document.getElementById('ip').style.backgroundColor = '#00eaff';
-		document.getElementById('mm').style.backgroundColor = '#00eaff';
-		document.getElementById('tr_m').style.backgroundColor = '#d44a00';
-		document.getElementById('tr_w').style.backgroundColor = '#d44a00';
-		document.getElementById('tr_e').style.backgroundColor = '#d44a00';
-		document.getElementById('tr_b').style.backgroundColor = '#d44a00';
-		document.getElementById('link').style.backgroundColor = '#00ddff';
-		document.getElementById('sanc').style.backgroundColor = '#00ddff';
-		document.getElementById('mount').style.backgroundColor = '#00ddff';
-		document.getElementById('item').style.backgroundColor = '#51ff3a';
-		document.getElementById('gt').style.backgroundColor = '#00eaff';
-		document.getElementById('ganon').style.backgroundColor = '#000';
-		document.getElementById('magic').style.backgroundColor = '#ff7b00';
-		document.getElementById('kid').style.backgroundColor = '#ff7b00';
-		document.getElementById('smith').style.backgroundColor = '#ff7b00';
-		document.getElementById('bat').style.backgroundColor = '#ff7b00';
-		document.getElementById('lib').style.backgroundColor = '#ff7b00';
-		document.getElementById('saha').style.backgroundColor = '#ff7b00';
-		document.getElementById('mimc').style.backgroundColor = '#ff7b00';
-		document.getElementById('rupee').style.backgroundColor = '#51ff3a';
-		document.getElementById('shop').style.backgroundColor = '#51ff3a';
-		document.getElementById('dark').style.backgroundColor = '#2433ff';
-		document.getElementById('connector').style.backgroundColor = '#ff00f9';
-		document.getElementById('bomb').style.backgroundColor = '#ff7b00';
-		document.getElementById('bump').style.backgroundColor = '#ff7b00';
-		document.getElementById('spike').style.backgroundColor = '#ff7b00';
-		document.getElementById('hook').style.backgroundColor = '#ff7b00';
-		document.getElementById('dam').style.backgroundColor = '#ff7b00';
-		
-		if (entrances[n].known_location != '') {
-			document.getElementById(entrances[n].known_location).style.backgroundColor = '#00F';
-		}
 	}
 	
 	window.checkReturn = function(n) {
@@ -1875,52 +1828,11 @@
 	}
 	
 	window.tagEntrance = function(n, t) {
-		document.getElementById('hc_m').style.backgroundColor = '#000';
-		document.getElementById('hc_w').style.backgroundColor = '#000';
-		document.getElementById('hc_e').style.backgroundColor = '#000';
-		document.getElementById('ct').style.backgroundColor = '#000';
-		document.getElementById('ep').style.backgroundColor = '#000';
-		document.getElementById('dp_m').style.backgroundColor = '#000';
-		document.getElementById('dp_w').style.backgroundColor = '#000';
-		document.getElementById('dp_e').style.backgroundColor = '#000';
-		document.getElementById('dp_n').style.backgroundColor = '#000';
-		document.getElementById('toh').style.backgroundColor = '#000';
-		document.getElementById('pod').style.backgroundColor = '#000';
-		document.getElementById('sp').style.backgroundColor = '#000';
-		document.getElementById('sw').style.backgroundColor = '#000';
-		document.getElementById('tt').style.backgroundColor = '#000';
-		document.getElementById('ip').style.backgroundColor = '#000';
-		document.getElementById('mm').style.backgroundColor = '#000';
-		document.getElementById('tr_m').style.backgroundColor = '#000';
-		document.getElementById('tr_w').style.backgroundColor = '#000';
-		document.getElementById('tr_e').style.backgroundColor = '#000';
-		document.getElementById('tr_b').style.backgroundColor = '#000';
-		document.getElementById('link').style.backgroundColor = '#000';
-		document.getElementById('sanc').style.backgroundColor = '#000';
-		document.getElementById('mount').style.backgroundColor = '#000';
-		document.getElementById('item').style.backgroundColor = '#000';
-		document.getElementById('gt').style.backgroundColor = '#000';
-		document.getElementById('ganon').style.backgroundColor = '#000';
-		document.getElementById('magic').style.backgroundColor = '#000';
-		document.getElementById('kid').style.backgroundColor = '#000';
-		document.getElementById('smith').style.backgroundColor = '#000';
-		document.getElementById('bat').style.backgroundColor = '#000';
-		document.getElementById('lib').style.backgroundColor = '#000';
-		document.getElementById('saha').style.backgroundColor = '#000';
-		document.getElementById('mimc').style.backgroundColor = '#000';
-		document.getElementById('rupee').style.backgroundColor = '#000';
-		document.getElementById('shop').style.backgroundColor = '#000';
-		document.getElementById('dark').style.backgroundColor = '#000';
-		document.getElementById('connector').style.backgroundColor = '#000';
-		document.getElementById('bomb').style.backgroundColor = '#000';
-		document.getElementById('bump').style.backgroundColor = '#000';
-		document.getElementById('spike').style.backgroundColor = '#000';
-		document.getElementById('hook').style.backgroundColor = '#000';
-		document.getElementById('dam').style.backgroundColor = '#000';
-		
 		if (entrances[document.getElementById('entranceID').value].known_location === n) {
 			entrances[document.getElementById('entranceID').value].known_location = '';
 			entrances[document.getElementById('entranceID').value].type = 0;
+			document.getElementById(n).style.color = null;
+			document.getElementById(n).style.backgroundColor = null;
 			var information = document.getElementById('informationdiv'+document.getElementById('entranceID').value);
 			if (information != null) {
 				information.remove();
@@ -1928,7 +1840,8 @@
 		} else {
 			entrances[document.getElementById('entranceID').value].known_location = n;
 			entrances[document.getElementById('entranceID').value].type = (t === true ? 2 : 3);
-			document.getElementById(n).style.backgroundColor = '#00F';
+			document.getElementById(n).style.color = 'white';
+			document.getElementById(n).style.backgroundColor = 'black';
 			
 			if (document.getElementById('informationdiv'+document.getElementById('entranceID').value) != null) {
 				document.getElementById('informationdiv'+document.getElementById('entranceID').value).innerHTML = n.replace('_','-').toUpperCase();
@@ -2309,6 +2222,15 @@
 		}
 		return false;
 	}	
+
+	window.findEntrances = function(name) {
+		if (flags.mapmode == 'N' || flags.entrancemode == 'N') return;
+		for (var i = 0; i < entrances.length; ++i) {
+			if (entrances[i].type == 2 && entrances[i].known_location.startsWith(name)) {
+				highlight_entrance(i);
+			}
+		}
+	};
 
 	window.findItems = function(items) {
 		if(/*spoilerLoaded && */flags.mapmode != "N")

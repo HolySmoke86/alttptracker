@@ -1,15 +1,15 @@
 <html>
    <head>
       <title>ALTTP Randomizer Community Tracker - Launcher</title>
-      <script type="text/javascript" src="js/index.js?v=20026"></script>
-      <script type="text/javascript" src="js/jquery-3.3.1.js?v=20026"></script>
-      <script type="text/javascript" src="js/jquery.powertip.js?v=20026"></script>
-      <script type="text/javascript" src="js/bootstrap.min.js?v=20026"></script>
-      <link href="css/jquery.powertip.css?v=20026" rel="stylesheet" />
-      <link href="css/launcher.css?v=20026" rel="stylesheet">
-      <link href="css/fonts.css?v=20026" rel="stylesheet">
-      <link href="css/sprites.css?v=20026" rel="stylesheet">
-      <link href="css/toast.css?v=20026" rel="stylesheet">
+      <script type="text/javascript" src="js/index.js?v=20026c"></script>
+      <script type="text/javascript" src="js/jquery-3.3.1.js?v=20026c"></script>
+      <script type="text/javascript" src="js/jquery.powertip.js?v=20026c"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js?v=20026c"></script>
+      <link href="css/jquery.powertip.css?v=20026c" rel="stylesheet" />
+      <link href="css/launcher.css?v=20026c" rel="stylesheet">
+      <link href="css/fonts.css?v=20026c" rel="stylesheet">
+      <link href="css/sprites.css?v=20026c" rel="stylesheet">
+      <link href="css/toast.css?v=20026c" rel="stylesheet">
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3T0KM2W1L"></script>
       <script>
@@ -35,7 +35,10 @@
             <div class="header-main-div">
                <a href="./index.html"><img src="./images/overlay/header.png" class="header-main-img"></a>
                <div class="header-news-div" >
-                  <span class="default-white-text">Build 2.0.026 062523 - Compatible for v31.x.x<br>Report any issues to Muffins (Discord: mfns.)<br>Check Known Issues for current known outstanding issues</span>
+                  <span class="default-white-text">Build 2.0.026c 062523 - Compatible for v31.x.x
+					  <br>Based on the original by <a href="https://alttprtracker.dunka.net/">Big Dunka</a> and modifications by <a href="https://alttprtracker.mfns.dev/">Muffins &amp; Structural Mike</a>
+					  <br>Report any issues to HolySmoke (Discord: holysmoke86)
+					  <br>Check Known Issues for current known outstanding issues</span>
                </div>
             </div>
             <div class="header-links">
@@ -417,6 +420,19 @@
                      <span class="preset-span">
                      <input id="glitchesnologic" value="Z" type="radio" name="glitchesgroup" />
                      <label for="glitchesnologic">No Logic</label>
+                     </span>
+                  </div>
+                  <div>
+                     <span class="preset-span-double">
+                     V31.1:
+                     </span>
+                     <span class="preset-span">
+                     <input id="v311no" value="N" type="radio" name="v311" />
+                     <label for="v311no">No</label>
+                     </span>
+                     <span class="preset-span">
+                     <input id="v311yes" value="Y" type="radio" name="v311" checked />
+                     <label for="v311yes">Yes</label>
                      </span>
                   </div>
                </div>
@@ -1147,6 +1163,14 @@
                      </span>						
                   </div>
                   <div>
+                     <label for="bgcolor" class="preset-span-double">
+                     Background Color:
+                     </label>
+                     <span class="preset-span">
+                     <input id="bgcolor" value="#132525" type="color" name="bgcolor" />
+                     </span>
+                  </div>
+                  <div>
                      <span class="preset-span" style="min-width: 100%">
                         <center><input type="checkbox" id="remembersettings"><label for="remembersettings" style="min-width: 184px;">Remember Display Settings</label> <span class="south tooltop-character" title="This site uses a tracking cookie to remember your settings">[?]</span></center>
                      </span>
@@ -1154,7 +1178,7 @@
                </div>
             </div>
             <div>
-               <div id="snackbar">Settings Applied! Click to launch ==></div>
+               <div id="snackbar">Settings Applied! Click to launch ==&gt;</div>
                <center><button type="button" class="launch preset-btn" style="width: 400px; font-size: 50px;" onclick="launch_tracker()">LAUNCH TRACKER</button></center>
             </div>
          </div>

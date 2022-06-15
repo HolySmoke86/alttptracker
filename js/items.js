@@ -38,8 +38,18 @@
 		restreamdelay: query.d.substr(16),
 		startingitems: query.s,
         sprite: query.p.replace('#','').replace('!',''),
+		v311: query.v311,
+		bgcolor: query.bgcolor,
     };
-	
+
+	if (document.readyState == 'loading') {
+		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementsByTagName('body')[0].style.backgroundColor = flags.bgcolor;
+		});
+	} else {
+		document.getElementsByTagName('body')[0].style.backgroundColor = flags.bgcolor;
+	}
+
 	window.maptype = query.map;
 	
 	window.startingitems = query.starting;

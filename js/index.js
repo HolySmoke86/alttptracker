@@ -32,6 +32,13 @@ function load_cookie() {
 		if (c.indexOf('c-Y') > -1) {
 			document.getElementById("alternatecoloryes").checked = true;
 		}
+		if (c.indexOf('bg-') > -1) {
+			var bgcolor = c.substr(c.indexOf('bg-') + 3);
+			if (bgcolor.indexOf('|') > -1) {
+				bgcolor = bgcolor.substr(0, bgcolor.indexOf('|'));
+			}
+			document.getElementById("bgcolor").value = bgcolor;
+		}
 	}
 }
 
@@ -98,6 +105,7 @@ function launch_tracker() {
 	var enemy = document.querySelector('input[name="enemygroup"]:checked').value;
 	var unknown = document.querySelector('input[name="unknowngroup"]:checked').value;
 	var glitches = document.querySelector('input[name="glitchesgroup"]:checked').value;
+	var v311 = document.querySelector('input[name="v311"]:checked').value;
 	var shuffledmaps = (document.getElementById("shuffledmaps").checked === true ? "1" : "0");
 	var shuffledcompasses = (document.getElementById("shuffledcompasses").checked === true ? "1" : "0");
 	var shuffledsmallkeys = (document.getElementById("shuffledsmallkeys").checked === true ? "1" : "0");
@@ -126,6 +134,7 @@ function launch_tracker() {
 	var restreamdelay = document.getElementById('restreamingdelay').value;
 	var spritesel = document.getElementById("spriteselect");
 	var sprite = spritesel.options[spritesel.selectedIndex].value;
+	var bgcolor = document.getElementById('bgcolor').value;
 	
 	if (restreamingcode != "") {
 		if (restreamingcode.length != 6) {
@@ -146,7 +155,7 @@ function launch_tracker() {
 	var height = sphere === "Y" ? map === "C" ? 988 : 744 : map === "C" ? 692 : 448;
 	
 	if (document.getElementById("remembersettings").checked == true) {
-		var settings = "m-" + map + "|s-" + sphere + "|a-" + autotracking + trackingport + "|c-" + color + "|p-" + sprite;
+		var settings = "m-" + map + "|s-" + sphere + "|a-" + autotracking + trackingport + "|c-" + color + "|bg-" + bgcolor + "|p-" + sprite;
 		document.cookie = "settings=" + settings + "; expires=Sat, 3 Jan 2026 12:00:00 UTC";
 	} else {
 		document.cookie = "settings=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
@@ -157,7 +166,7 @@ function launch_tracker() {
 		glitches = 'M';
 	}
 	
-	var trackerWindow = window.open('tracker.html?f={world}{entrance}{door}{overworld}{boss}{enemy}{unknown}{glitches}{shuffledmaps}{shuffledcompasses}{shuffledsmallkeys}{shuffledbigkeys}{shopsanity}{ambrosia}{nonprogressivebows}{activatedflute}{bonkshuffle}{goal}{tower}{towercrystals}{ganon}{ganoncrystals}{swords}&d={map}{spoiler}{sphere}{color}{autotracking}{trackingport}{restreamingcode}{restreamer}{restreamdelay}&s={startingitemstring}&p={sprite}&r={epoch}'
+	var trackerWindow = window.open('tracker.html?f={world}{entrance}{door}{overworld}{boss}{enemy}{unknown}{glitches}{shuffledmaps}{shuffledcompasses}{shuffledsmallkeys}{shuffledbigkeys}{shopsanity}{ambrosia}{nonprogressivebows}{activatedflute}{bonkshuffle}{goal}{tower}{towercrystals}{ganon}{ganoncrystals}{swords}&d={map}{spoiler}{sphere}{color}{autotracking}{trackingport}{restreamingcode}{restreamer}{restreamdelay}&s={startingitemstring}&p={sprite}&v311={v311}&bgcolor={bgcolor}&r={epoch}'
 			.replace('{world}', world)
 			.replace('{entrance}', entrance)
 			.replace('{door}', door)
@@ -166,6 +175,7 @@ function launch_tracker() {
 			.replace('{enemy}', enemy)
 			.replace('{unknown}', unknown)
 			.replace('{glitches}', glitches)
+			.replace('{v311}', v311)
 			.replace('{shuffledmaps}', shuffledmaps)
 			.replace('{shuffledcompasses}', shuffledcompasses)
 			.replace('{shuffledsmallkeys}', shuffledsmallkeys)
@@ -192,6 +202,7 @@ function launch_tracker() {
 			.replace('{restreamdelay}', restreamdelay)
 			.replace('{startingitemstring}', startingitemstring)
 			.replace('{sprite}', sprite)
+			.replace('{bgcolor}', encodeURIComponent(bgcolor))
 			.replace('{epoch}', Date.now()),
 			//.replace('{compact}', (map === "C" ? '&map=C' : '')),
 		'',

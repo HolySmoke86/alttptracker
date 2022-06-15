@@ -1,30 +1,21 @@
 <html>
 	<head>
 		<title>ALTTP Randomizer Community Tracker - Tracker</title>
-		<script src="js/jquery-3.3.1.js?v=20026"></script>
-		<script src="js/bootstrap.min.js?v=20026"></script>
-		<link rel="stylesheet" type="text/css" href="css/sprites.css?v=20026">
-		<link rel="stylesheet" type="text/css" href="css/fonts.css?v=20026">
+		<script src="js/jquery-3.3.1.js?v=20026c"></script>
+		<script src="js/bootstrap.min.js?v=20026c"></script>
+		<link rel="stylesheet" type="text/css" href="css/sprites.css?v=20026c">
+		<link rel="stylesheet" type="text/css" href="css/fonts.css?v=20026c">
 		<link rel="stylesheet" type="text/css" id="mainstyle">
 		<link rel="stylesheet" type="text/css" id="maincompactstyle">
 		<link rel="stylesheet" type="text/css" id="alternatestyle">
-		<script src="js/util.js?v=20026"></script>
-		<script src="js/items.js?v=20026"></script>
-		<script src="js/chests.js?v=20026"></script>
-		<script src="js/entrancechests.js?v=20026"></script>
-		<script src="js/track.js?v=20026"></script>
-		<script src="js/dungeons.js?v=20026"></script>
-		<script src="js/spoiler.js?v=20026"></script>
-		<script src="js/autot.js?v=20026"></script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3T0KM2W1L"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'G-Z3T0KM2W1L');
-		</script>
+		<script src="js/util.js?v=20026c"></script>
+		<script src="js/items.js?v=20026c"></script>
+		<script src="js/chests.js?v=20026c"></script>
+		<script src="js/entrancechests.js?v=20026c"></script>
+		<script src="js/track.js?v=20026c"></script>
+		<script src="js/dungeons.js?v=20026c"></script>
+		<script src="js/spoiler.js?v=20026c"></script>
+		<script src="js/autot.js?v=20026c"></script>
 		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 		<meta http-equiv="Pragma" content="no-cache" />
 		<meta http-equiv="Expires" content="0" />
@@ -32,8 +23,8 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
 	</head>
-	<body style="background-color: black;">
-		<div id="app" class="row" style="display: none;">
+	<body>
+		<div id="app" class="row" style="display: none;" oncontextmenu="return false;">
 			<div id="trackingoverlay" class="restreamingoverlay">
 				<div id="tracker" class="cell">
 					<div class="row">
@@ -79,14 +70,14 @@
 										</div>
 									</div>
 									<div>
-										<div class="cell">
+										<div class="cell" onMouseover="findEntrances('hc')" onMouseout="unhighlightAll()">
 											<div id="smallhalfheader0" class="smallhalfheader">HC</div>
 										</div>
 										<div class="cell">
 											<div id="smallkeyhalf0" class="smallkeyhalf" onClick="toggle('smallkeyhalf0')" onMouseover="findItems(['HC Key'])" onMouseout="unhighlightAll()" oncontextmenu="javascript:rightClickKey('smallkeyhalf0');return false;">0</div>
 										</div>
 										<div id="bigkeyhalf0" class="bigkeyhalf" onClick="toggle('bigkeyhalf0')" onMouseover="findItems(['HC Big Key'])" onMouseout="unhighlightAll()"></div>
-										<div class="cell">
+										<div class="cell" onMouseover="findEntrances('ct')" onMouseout="unhighlightAll()">
 											<div id="smallhalfheader1" class="smallhalfheader">CT</div>
 										</div>
 										<div class="cell">
@@ -110,7 +101,7 @@
 							</div>
 							<div class="row">
 								<div class="cell">
-									<div class="boss boss0" onClick="toggle('boss0')"></div>
+									<div class="boss boss0" onClick="toggle('boss0')" onMouseover="findEntrances('ep')" onMouseout="unhighlightAll()"></div>
 									<div id="dungeonEnemy0" class="enemizer-0" onClick="toggle_enemy(0)" oncontextmenu="javascript:rightClickEnemy(0);return false;"></div>
 									<div id="dungeonPrize0" class="prize-0" onClick="toggle_dungeon(0)" oncontextmenu="javascript:rightClickPrize(0);return false;"></div>
 									<div id="entranceBoss0" class="entranceBossDiv"></div>
@@ -130,7 +121,7 @@
 							</div>
 							<div class="row">
 								<div class="cell">
-									<div class="boss boss1" onClick="toggle('boss1')"></div>
+									<div class="boss boss1" onClick="toggle('boss1')" onMouseover="findEntrances('dp')" onMouseout="unhighlightAll()"></div>
 									<div id="dungeonEnemy1" class="enemizer-0" onClick="toggle_enemy(1)" oncontextmenu="javascript:rightClickEnemy(1);return false;"></div>
 									<div id="dungeonPrize1" class="prize-0" onClick="toggle_dungeon(1)" oncontextmenu="javascript:rightClickPrize(1);return false;"></div>
 									<div id="entranceBoss1" class="entranceBossDiv"></div>
@@ -150,7 +141,7 @@
 							</div>
 							<div class="row">
 								<div class="cell">
-									<div class="boss boss2" onClick="toggle('boss2')"></div>
+									<div class="boss boss2" onClick="toggle('boss2')" onMouseover="findEntrances('toh')" onMouseout="unhighlightAll()"></div>
 									<div id="dungeonEnemy2" class="enemizer-0" onClick="toggle_enemy(2)" oncontextmenu="javascript:rightClickEnemy(2);return false;"></div>
 									<div id="dungeonPrize2" class="prize-0" onClick="toggle_dungeon(2)" oncontextmenu="javascript:rightClickPrize(2);return false;"></div>
 									<div id="entranceBoss2" class="entranceBossDiv"></div>
@@ -264,10 +255,10 @@
 									<div class="item half agahnim2" onClick="toggle('agahnim2')" onMouseover="showNiceItems(10)" onMouseout="clearCaption()"></div>
 								</div>
 								<div id="hcctchests" class="cell lowerchest">
-									<div id="smallhalfheader-hcc" class="smallhalfheader" style="left: 6px; top: 20px; position: absolute; z-index: 1; pointer-events: none;">HC</div>
+									<div id="smallhalfheader-hcc" class="smallhalfheader" style="left: 6px; top: 20px; position: absolute; z-index: 1; pointer-events: none;" onMouseover="findEntrances('hc')" onMouseout="unhighlightAll()">HC</div>
 									<div class="cell compass" style="position: absolute;" onClick="clickCompass(11)"></div>
 									<div id="chest11" class="chest" style="left: 32px; top: 0px; position: absolute;" onClick="toggle('chest11')" onMouseover="showNiceItems(11)" onMouseout="clearCaption()" oncontextmenu="javascript:rightClickChest('chest11');return false;">8</div>
-									<div id="smallhalfheader-ctc" class="smallhalfheader" style="left: 6px; top: 52px; position: absolute; z-index: 1; pointer-events: none;">CT</div>
+									<div id="smallhalfheader-ctc" class="smallhalfheader" style="left: 6px; top: 52px; position: absolute; z-index: 1; pointer-events: none;" onMouseover="findEntrances('ct')" onMouseout="unhighlightAll()">CT</div>
 									<div class="cell compass" style="top: 32px; position: absolute;" onClick="clickCompass(12)"></div>
 									<div id="chest12" class="chest" style="left: 32px; top: 32px; position: absolute;" onClick="toggle('chest12')" onMouseover="showNiceItems(12)" onMouseout="clearCaption()" oncontextmenu="javascript:rightClickChest('chest12');return false;">2</div>
 								</div>
@@ -276,45 +267,45 @@
 					</div>
 					<div class="row">
 						<div class="cell">
-							<div class="boss boss3" onClick="toggle('boss3')"></div>
+							<div class="boss boss3" onClick="toggle('boss3')" onMouseover="findEntrances('pod')" onMouseout="unhighlightAll()"></div>
 							<div id="dungeonEnemy3" class="enemizer-0" onClick="toggle_enemy(3)" oncontextmenu="javascript:rightClickEnemy(3);return false;"></div>
 							<div id="dungeonPrize3" class="prize-0" onClick="toggle_dungeon(3)" oncontextmenu="javascript:rightClickPrize(3);return false;"></div>
 							<div id="entranceBoss3" class="entranceBossDiv"></div>
 						</div>
 						<div class="cell">
-							<div class="boss boss4" onClick="toggle('boss4')"></div>
+							<div class="boss boss4" onClick="toggle('boss4')" onMouseover="findEntrances('sp')" onMouseout="unhighlightAll()"></div>
 							<div id="dungeonEnemy4" class="enemizer-0" onClick="toggle_enemy(4)" oncontextmenu="javascript:rightClickEnemy(4);return false;"></div>
 							<div id="dungeonPrize4" class="prize-0" onClick="toggle_dungeon(4)" oncontextmenu="javascript:rightClickPrize(4);return false;"></div>
 							<div id="entranceBoss4" class="entranceBossDiv"></div>
 						</div>
 						<div class="cell">
-							<div class="boss boss5" onClick="toggle('boss5')"></div>
+							<div class="boss boss5" onClick="toggle('boss5')" onMouseover="findEntrances('sw')" onMouseout="unhighlightAll()"></div>
 							<div id="dungeonEnemy5" class="enemizer-0" onClick="toggle_enemy(5)" oncontextmenu="javascript:rightClickEnemy(5);return false;"></div>
 							<div id="dungeonPrize5" class="prize-0" onClick="toggle_dungeon(5)" oncontextmenu="javascript:rightClickPrize(5);return false;"></div>
 							<div id="entranceBoss5" class="entranceBossDiv"></div>
 						</div>
 						<div class="cell">
-							<div class="boss boss6" onClick="toggle('boss6')"></div>
+							<div class="boss boss6" onClick="toggle('boss6')" onMouseover="findEntrances('tt')" onMouseout="unhighlightAll()"></div>
 							<div id="dungeonEnemy6" class="enemizer-0" onClick="toggle_enemy(6)" oncontextmenu="javascript:rightClickEnemy(6);return false;"></div>
 							<div id="bombfloor" class="bombfloor-0" onClick="toggle_bomb_floor()" onMouseover="findItems(['TT Bomb Floor'])" onMouseout="unhighlightAll()"></div>
 							<div id="dungeonPrize6" class="prize-0" onClick="toggle_dungeon(6)" oncontextmenu="javascript:rightClickPrize(6);return false;"></div>
 							<div id="entranceBoss6" class="entranceBossDiv"></div>
 						</div>
 						<div class="cell">
-							<div class="boss boss7" onClick="toggle('boss7')"></div>
+							<div class="boss boss7" onClick="toggle('boss7')" onMouseover="findEntrances('ip')" onMouseout="unhighlightAll()"></div>
 							<div id="dungeonEnemy7" class="enemizer-0" onClick="toggle_enemy(7)" oncontextmenu="javascript:rightClickEnemy(7);return false;"></div>
 							<div id="dungeonPrize7" class="prize-0" onClick="toggle_dungeon(7)" oncontextmenu="javascript:rightClickPrize(7);return false;"></div>
 							<div id="entranceBoss7" class="entranceBossDiv"></div>
 						</div>
 						<div class="cell">
-							<div class="boss boss8" onClick="toggle('boss8')"></div>
+							<div class="boss boss8" onClick="toggle('boss8')" onMouseover="findEntrances('mm')" onMouseout="unhighlightAll()"></div>
 							<div id="dungeonEnemy8" class="enemizer-0" onClick="toggle_enemy(8)" oncontextmenu="javascript:rightClickEnemy(8);return false;"></div>
 							<div id="medallion0" class="medallion-0" onClick="toggle_medallion(0)" oncontextmenu="javascript:rightClickMedallion(0);return false;"></div>
 							<div id="dungeonPrize8" class="prize-0" onClick="toggle_dungeon(8)" oncontextmenu="javascript:rightClickPrize(8);return false;"></div>
 							<div id="entranceBoss8" class="entranceBossDiv"></div>
 						</div>
 						<div class="cell">
-							<div class="boss boss9" onClick="toggle('boss9')"></div>
+							<div class="boss boss9" onClick="toggle('boss9')" onMouseover="findEntrances('tr')" onMouseout="unhighlightAll()"></div>
 							<div id="dungeonEnemy9" class="enemizer-0" onClick="toggle_enemy(9)" oncontextmenu="javascript:rightClickEnemy(9);return false;"></div>
 							<div id="medallion1" class="medallion-0" onClick="toggle_medallion(1)" oncontextmenu="javascript:rightClickMedallion(1);return false;"></div>
 							<div id="dungeonPrize9" class="prize-0" onClick="toggle_dungeon(9)" oncontextmenu="javascript:rightClickPrize(9);return false;"></div>
@@ -1023,7 +1014,7 @@
 			</div>
 		</div>
 		<div class="modal fade" id="entranceModal" aria-hidden="true" style="width: 884px; height: 100%; background-color: rgb(0,0,0,.3); z-index: 3; position: absolute; top: 0px; left: 456px; display: none;" onclick="hideEntranceModal()">
-			<div id="entranceModalMain" style="width: 800px; height: 300px; background-color: rgb(0,0,0,1); z-index: 4; position: absolute; top: 50px; left: 40px; border-style: solid; border-color: white; color: #FFF; " onclick="overrideEntranceClose();">
+			<div id="entranceModalMain" style="width: 800px; height: 300px; background-color: rgb(40,40,40); z-index: 4; position: absolute; top: 50px; left: 40px; border-style: solid; border-color: white; color: #FFF; " onclick="overrideEntranceClose();">
 				<div style="margin: 0px 10px 0px 10px;">
 					<input id="entranceID" type="text" style="visibility: collapse; height: 0px;"/><br>
 					<span id="entranceModalTitle" style="vertical-align: 8px;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="addConnectorSpan" style="margin-right: 20px; cursor: pointer;" onclick="StartAConnectorModal();"><span style="vertical-align: 8px;">Add Connector:&nbsp;&nbsp;&nbsp;</span><img style="" src="./images/interface/connect.png" /></span><label style="vertical-align: 8px; white-space: nowrap;">Note: <input id="entranceModalNote" type="text" style="margin-top: 4px; width: 236px;" onkeypress="return checkReturn(event);" /></label><span id="connectTemplateSpan" style="cursor: pointer; visibility: hidden;" onclick="dosomething(1,2);" >Title&nbsp;&nbsp;&nbsp;<img id="connectTemplateImg" style="height: 15px;"src="./images/interface/cancel.png" />&nbsp;&nbsp;&nbsp;</span>
@@ -1036,13 +1027,13 @@
 						<div id="entranceModalLightWorld">
 							<div class="entranceModalGeneralInner">
 								Light World Dungeons<br>
-								<div class="entrancelocationdiv" onclick="tagEntrance('hc_m', true)" id="hc_m">HC m</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('hc_w', true)" id="hc_w">HC w</div>
+								<div class="entrancelocationdiv" onclick="tagEntrance('hc_m', true)" id="hc_m">HC m</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('hc_e', true)" id="hc_e">HC e</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('ct', true)" id="ct">CT</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('ep', true)" id="ep">EP</div>
-								<div class="entrancelocationdiv" onclick="tagEntrance('dp_m', true)" id="dp_m">DP m</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('dp_w', true)" id="dp_w">DP w</div>
+								<div class="entrancelocationdiv" onclick="tagEntrance('dp_m', true)" id="dp_m">DP m</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('dp_e', true)" id="dp_e">DP e</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('dp_n', true)" id="dp_n">DP n</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('toh', true)" id="toh">ToH</div>
@@ -1084,8 +1075,8 @@
 								<div class="entrancelocationdiv" onclick="tagEntrance('tt', true)" id="tt">TT</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('ip', true)" id="ip">IP</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('mm', true)" id="mm">MM</div>
-								<div class="entrancelocationdiv" onclick="tagEntrance('tr_m', true)" id="tr_m">TR m</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('tr_w', true)" id="tr_w">TR w</div>
+								<div class="entrancelocationdiv" onclick="tagEntrance('tr_m', true)" id="tr_m">TR m</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('tr_e', true)" id="tr_e">TR e</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('tr_b', true)" id="tr_b">TR b</div>
 								<div class="entrancelocationdiv" onclick="tagEntrance('gt', true)" id="gt">GT</div>
@@ -1216,7 +1207,7 @@
 				<center><input type="button" onclick="closeSpoilerModal();" value="Cancel and Close" /></center>
 			</div>
 		</div>
-		<div class="modal fade" id="flagsModal" aria-hidden="true" style="width: 400px; height: 354px; background-color: rgba(255, 255, 255, 1); z-index: 100; position: absolute; top: 22px; left: 24px; display: none;">
+		<div class="modal fade" id="flagsModal" aria-hidden="true" style="width: 400px; height: 354px; color: white; background-color: #282828; border: medium solid #081212; z-index: 100; position: absolute; top: 22px; left: 24px; display: none;">
 			<div>
 				<div style="user-select: none;">
 					<h3 style="width: 190px; display: inline-block; margin-left: 12px;">Change Flags</h3>
