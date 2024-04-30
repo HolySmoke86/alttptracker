@@ -446,6 +446,19 @@
                      <label for="glitchesnologic">No Logic</label>
                   </span>
                </div>
+               <div>
+                 <span class="preset-span-double">
+                    V31.1:
+                 </span>
+                 <span class="preset-span">
+                    <input id="v311no" value="N" type="radio" name="v311" />
+                    <label for="v311no">No</label>
+                 </span>
+                 <span class="preset-span">
+                    <input id="v311yes" value="Y" type="radio" name="v311" checked />
+                    <label for="v311yes">Yes</label>
+                 </span>
+               </div>
             </div>
          </div>
          <div class="preset-div">
@@ -1212,18 +1225,25 @@
                      <label for="oldmapstyles">Old Map Styles</label>
                   </span>
                </div>
-               <div>
-                  <span class="preset-span" style="min-width: 100%">
-                     <center><input type="checkbox" id="remembersettings"><label for="remembersettings" style="min-width: 184px;">Remember Display Settings</label> <span class="south tooltop-character" title="This site uses a tracking cookie to remember your settings">[?]</span></center>
-                  </span>
-               </div>
-            </div>
-         </div>
-         <div>
-            <div id="snackbar">Settings Applied! Click to launch ==></div>
-            <center><button type="button" class="launch preset-btn" style="width: 400px; font-size: 50px;" onclick="launch_tracker()">LAUNCH TRACKER</button></center>
+            <div>
+               <label for="bgcolor" class="preset-span-double">
+                  Background Color:
+               </label>
+               <span class="preset-span">
+                  <input id="bgcolor" value="#000000" type="color" name="bgcolor" />
+               </span>
+           </div>
+           <div>
+              <span class="preset-span" style="min-width: 100%">
+                 <center><input type="checkbox" id="remembersettings"><label for="remembersettings" style="min-width: 184px;">Remember Display Settings</label> <span class="south tooltop-character" title="This site uses a tracking cookie to remember your settings">[?]</span></center>
+              </span>
+           </div>
+           </div>
+        </div>
+        <div>
+           <div id="snackbar">Settings Applied! Click to launch ==&gt;</div>
+           <center><button type="button" class="launch preset-btn" style="width: 400px; font-size: 50px;" onclick="launch_tracker()">LAUNCH TRACKER</button></center>
          </div>
       </div>
 </body>
-
 </html>

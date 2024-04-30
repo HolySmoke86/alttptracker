@@ -39,9 +39,19 @@
         mapstyle: query.d.charAt(17),
         startingitems: query.s,
         sprite: query.p.replace('#','').replace('!',''),
+		v311: query.v311,
+		bgcolor: query.bgcolor,
     };
 
     window.flags.trackingport = parseInt(flags.trackingport);
+
+	if (document.readyState == 'loading') {
+		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementsByTagName('body')[0].style.backgroundColor = flags.bgcolor;
+		});
+	} else {
+		document.getElementsByTagName('body')[0].style.backgroundColor = flags.bgcolor;
+	}
     
     window.maptype = query.map;
     
