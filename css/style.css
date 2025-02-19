@@ -61,12 +61,17 @@ body {
 }
 
 #tracker .item,
-#tracker .boss { opacity: .25; }
-#tracker .prize { opacity: .66; 
+#tracker .boss { opacity: .25; background-size: 90%; background-repeat: no-repeat; background-position: center center; }
+#tracker .smitem { background-size: 80%; }
+#tracker .item.bottle1,
+#tracker .item.bottle2,
+#tracker .item.bottle3,
+#tracker .item.bottle4 { background-size: 115%; }
+#tracker .prize { opacity: .66;
   border: 2px solid;
   border-radius: 100%;
   background-color: #000;
-  background-position: right -2px bottom -2px;  
+  background-position: right -2px bottom -2px;
 }
 #tracker .item[class*="active"],
 #tracker .boss.defeated { opacity: 1; }
@@ -268,7 +273,7 @@ body {
   position: absolute;
   bottom: 0px;
   color: white;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   font-size: 12px;
   text-align: center;
 }
@@ -317,13 +322,13 @@ body {
 .shield.active-3 { background-image: url(../images/items/shield3.png); background-size:100%; float:left; }
 .moonpearl { background-image: url(../images/items/moonpearl.png); background-size:100%; }
 .heartpiece { background-image: url(../images/items/heartpiece0.png); background-size:100%; }
-div[class*=" heartpiece"].active-1 { 
+div[class*=" heartpiece"].active-1 {
   background-image: url(../images/items/heartpiece1.png);
  }
-div[class*=" heartpiece"].active-2 { 
+div[class*=" heartpiece"].active-2 {
   background-image: url(../images/items/heartpiece2.png);
  }
-div[class*=" heartpiece"].active-3 { 
+div[class*=" heartpiece"].active-3 {
   background-image: url(../images/items/heartpiece3.png);
  }
 .crystalgoal.crystals0 { background-image: url(../images/dungeons/crystal0.png); background-size:100%; }
@@ -355,7 +360,7 @@ div[class*=" heartpiece"].active-3 {
 .crystalgoalselect { background-color: #333; width: 244px; height: 24px; z-index: 99; position: absolute; top: 0; left: 0; }
 .ganongoalselect { background-color: #333; width: 244px; height: 24px; z-index: 99; position: absolute; top: 24; left: 0; }
 .changeflags { width: 24px; height: 24px; z-index: 2; position: absolute; top: 48; left: 0; }
-.goalselect { height: 24px; width: 24px; } 
+.goalselect { height: 24px; width: 24px; }
 .showpaths { width: 24px; height: 24px; z-index: 2; position: absolute; top: 72; left: 0; user-select: none; }
 
 .bomb { background-image: url(../images/items/bomb.png); }
@@ -468,7 +473,7 @@ div[class*=" bottle"].active-7 { background-image: url(../images/items/bottle_go
 .pendant-1 { background-image: url(../images/overlay/pendant1.png); }
 .pendant-2 { background-image: url(../images/overlay/pendant2.png); }
 
-.smitem {width: 64; height: 64; background-size: 90%; background-repeat: no-repeat; background-position: center;}
+.smitem {width: 64; height: 64; background-size: 80%; background-repeat: no-repeat; background-position: center;}
 
 .charge { background-image: url(../images/items/charge.png); }
 .etank { background-image: url(../images/items/etank.png); }
@@ -491,14 +496,14 @@ div[class*=" bottle"].active-7 { background-image: url(../images/items/bottle_go
 .varia { background-image: url(../images/items/varia.png); }
 .wave { background-image: url(../images/items/wave.png); }
 .xray { background-image: url(../images/items/xray.png); }
-.motherbrain { background-image: url(../images/items/motherbrain2.png); opacity: 1 !important;}
-.motherbrain.active { background-image: url(../images/items/motherbrain.png); }
-.ganon { background-image: url(../images/items/ganon.png); }
+#tracker .motherbrain { background-image: url(../images/items/motherbrain2.png); opacity: 1; background-size: 70%; }
+#tracker .ganon { background-image: url(../images/items/ganon.png); background-size: 100%; }
+#tracker .motherbrain.active { background-image: url(../images/items/motherbrain.png); }
 
-.kraid { background-image: url(../images/dungeons/kraid.png); filter: grayscale(1);}
-.phantoon { background-image: url(../images/dungeons/phantoon.png); filter: grayscale(1);}
-.draygon { background-image: url(../images/dungeons/draygon.png); filter: grayscale(1);}
-.ridley { background-image: url(../images/dungeons/ridley.png); filter: grayscale(1);}
+#tracker .kraid { background-image: url(../images/dungeons/kraid.png); opacity: 1; }
+#tracker .phantoon { background-image: url(../images/dungeons/phantoon.png); opacity: 1; }
+#tracker .draygon { background-image: url(../images/dungeons/draygon.png); opacity: 1; }
+#tracker .ridley { background-image: url(../images/dungeons/ridley.png); opacity: 1; }
 
 .smkey1 { width: 32px; height: 32px; background-size: 32px; top: 0; left: 1; background-image: url(../images/dungeons/sm_keycard_level1.png); }
 .smkey2 { width: 32px; height: 32px; background-size: 32px; top: 0; left: 31; background-image: url(../images/dungeons/sm_keycard_level2.png); }
@@ -510,22 +515,22 @@ div[class*=" bottle"].active-7 { background-image: url(../images/items/bottle_go
 .smabvbr { width: 32px; height: 32px; background-size: 32px; top: 32; left: 32; background-image: url(../images/dungeons/BR.png); opacity: 0.9;}
 .smabvcr { width: 32px; height: 32px; background-size: 32px; top: 32; left: 32; background-image: url(../images/dungeons/CR.png); opacity: 0.9;}
 .smabvln { width: 32px; height: 32px; background-size: 32px; top: 32; left: 32; background-image: url(../images/dungeons/LN.png); opacity: 0.9;}
-.smboss.active { filter: none; }
+#tracker .smboss.active { opacity: .25; }
+#tracker .motherbrain.active { opacity: .25; }
 
-.smtext { 
+.smtext {
   padding-left: 3px;
   padding-right: 3px;
   background-color: #00000081;
   /* make roudned on top*/
-  border-top-left-radius: 20%;
-  border-top-right-radius: 20%;
+  border-radius: 3px;
   right: 6px;
-  bottom: -3px;
+  bottom: 3px;
   text-align: right;
-  font-size: 24px; 
-  font-weight: 700; 
-  color: #FFF; 
-  text-shadow: 1px 1px 2px #000; 
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFF;
+  text-shadow: 1px 1px 2px #000;
   position: absolute;
   user-select: none;
 }
@@ -792,7 +797,7 @@ div[class*=" bottle"].active-7 { background-image: url(../images/items/bottle_go
     padding: 30px;
     border: #0f0;
     border-width: 2px;
-    border-style: solid;	
+    border-style: solid;
 }
 
 .releaseDiv {

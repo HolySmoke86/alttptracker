@@ -1,19 +1,19 @@
-body { 
-	font-family: roboto_condensedregular, Arial, Helvetica, sans-serif; 
-	font-size: 14px; 
+body {
+	font-family: roboto_condensedregular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
 	background-image: url(../images/overlay/background.png);
 }
 
-label { 
-	display: inline-block; 
+label {
+	display: inline-block;
 }
 
-div { 
-	margin: 5px 0; 
+div {
+	margin: 5px 0;
 }
 
 .default-white-text {
-	font-size: 14px; 
+	font-size: 14px;
 	color: white;
 }
 
@@ -73,11 +73,10 @@ div {
 	cursor: pointer;
 }
 
-.preset-btn { 
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
-	font-size: 14px; 
-	background-color: #d6dfdc; 
-	width: 140px; 
+.preset-btn {
+	font-size: 14px;
+	background-color: #d6dfdc;
+	width: 140px;
 	padding: 4px 4px;
 	border: 2px solid #333632;
 	border-radius: 5px;
@@ -85,13 +84,13 @@ div {
 	transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.preset-btn:hover { 
-    background-color: #ffdc7a; 
+.preset-btn:hover {
+    background-color: #ffdc7a;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 .select-label {
-	
+
 }
 
 .starting-inner-div {
@@ -119,7 +118,7 @@ div {
     border-color: #ffa700;
 	border-width: 3px;
     border-style: solid;
-    border-radius: 3px;	
+    border-radius: 3px;
 }
 
 .sprite-dropdown {
@@ -152,9 +151,9 @@ div {
     left: 12px;
 }
 
-.item { 
-	width: 64px; 
-	height: 64px; 
+.item {
+	width: 64px;
+	height: 64px;
 	opacity: .25;
 	float: left;
 }
