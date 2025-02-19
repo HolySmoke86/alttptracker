@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>ALTTP Randomizer Community Tracker - Instructions</title>
+		<title>SMZ3 Community Tracker - Instructions</title>
 		<script type="text/javascript" src="js/index.js?v=20250224"></script>
 		<script type="text/javascript" src="js/jquery-3.3.1.js?v=20250224"></script>
 		<script type="text/javascript" src="js/jquery.powertip.js?v=20250224"></script>
@@ -14,9 +14,9 @@
 			$(function() {
 				$('.south').powerTip({ placement: 's' });
 			});
-			
+
 			const sectionnames = ['launcher','item','map','entrance','dungeon','overworld','auto'];
-			
+
 			function showsection(x) {
 				document.getElementById('launchersection').style.display = 'none';
 				document.getElementById('itemsection').style.display = 'none';
@@ -25,10 +25,10 @@
 				document.getElementById('dungeonsection').style.display = 'none';
 				document.getElementById('overworldsection').style.display = 'none';
 				document.getElementById('autosection').style.display = 'none';
-			
+
 				document.getElementById(x).style.display = 'block';
 			}
-			
+
 			function loadFromAnchor() {
 				let split = document.URL.toLowerCase().split('#');
 				if(split.length == 2 && sectionnames.includes(split[1]))
@@ -36,7 +36,7 @@
 					showsection(split[1]+'section');
 				}
 			}
-			
+
 			function start() {
 				window.addEventListener('hashchange',function(){loadFromAnchor();});
 				loadFromAnchor();
@@ -497,7 +497,7 @@
 					Near the bottom of the <b>Overworld Tracking</b> page, the button <b>Export marked states and transitions as Customizer YAML</b> can be used to save a YAML file that includes full information about the overworld mode settings and (depending on mode) all marked edge connections, screen states and flute spots.<br>
 					This file can then be loaded in the Overworld Randomizer to generate seeds that have all the set connections, states and flute spots. Everything not specified will be randomized like normal under the selected mode settings.<br>
 					For playing a Customizer seed, the button <b>Bulk transition actions</b> opens a window with several buttons that set a certain group of edges to use their vanilla connections, for example all horizontal edges or all Dark World transitions. This button only appears if the current mode allows for randomized edges.<br>
-					Most of these options can also be selected when launching the tracker, in the <b>Customizer:</b> line right below the overworld mode settings. Currently this is only supported when Mixed Overworld is disabled. 
+					Most of these options can also be selected when launching the tracker, in the <b>Customizer:</b> line right below the overworld mode settings. Currently this is only supported when Mixed Overworld is disabled.
 					<br><br>
 					<center><img src="./images/overlay/instructions33.png"></center>
 					<br>
