@@ -2,7 +2,7 @@ var startingitemstring = "00000000000000000000000000";
 
 function load_cookie() {
 		var allCookies = document.cookie;
-	
+
 	if (allCookies.indexOf('settings') > -1) {
 		document.getElementById("remembersettings").checked = true;
 		let settingsCookie = allCookies.substring(allCookies.indexOf('settings'));
@@ -31,7 +31,7 @@ function load_cookie() {
 				case 'cc':
 					switch (setting[1]) {
 						case 'N':
-							document.getElementById("chestcolorno").checked = false;
+							document.getElementById("chestcolorno").checked = true;
 							break;
 						case 'Y':
 							document.getElementById("chestcoloryes").checked = true;
@@ -114,7 +114,7 @@ function setstartingitem(x, y, z) {
 	document.getElementById("starting" + x).classList.remove(x + startingitemstring.charAt(y));
 	startingitemstring = startingitemstring.substring(0, y) + z + startingitemstring.substring(y + 1);
 	document.getElementById("starting" + x).classList.add(x + startingitemstring.charAt(y));
-	document.getElementById("starting" + x).style.opacity = (startingitemstring.charAt(y) === "0" ? "0.25" : "1.0");	
+	document.getElementById("starting" + x).style.opacity = (startingitemstring.charAt(y) === "0" ? "0.25" : "1.0");
 }
 
 function resetallstartingitems() {
@@ -184,7 +184,7 @@ function launch_tracker() {
 	var sprite = spritesel.options[spritesel.selectedIndex].value;
 	var mapStyle = 'N';
 	var scale = document.querySelector('input[name="scalegroup"]:checked').value;
-	
+
 	var width = 576
 
 	var height;
@@ -227,19 +227,19 @@ function launch_tracker() {
 	}
 
 
-		
+
 	if (document.getElementById("remembersettings").checked == true) {
 		var settings = "m-" + map + "|cc-" + chestcolor + "|s-" + sphere + "|a-" + autotracking + trackingport + "|p-" + sprite + "|ms-" + mapStyle + "|sc-" + scale;
 		document.cookie = "settings=" + settings + "; expires=Sat, 3 Jan 2026 12:00:00 UTC";
 	} else {
 		document.cookie = "settings=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 	}
-	
+
 	if (glitches === 'O' && world === "I") {
 		alert('NOTICE: Inverted OWG is currently not supported for logic, all locations will be flagged as available.');
 		glitches = 'M';
 	}
-	
+
 	var trackerWindow = window.open('tracker.html?f={world}{entrance}{door}{overworld}{boss}{enemy}{pseudoboots}{unknown}{glitches}{shuffledmaps}{shuffledcompasses}{shuffledsmallkeys}{shuffledbigkeys}{shopsanity}{ambrosia}{nonprogressivebows}{activatedflute}{bonkshuffle}{goal}{tower}{towercrystals}{ganon}{ganoncrystals}{swords}{shuffledsmkeys}&d={map}{chestcolor}{spoiler}{sphere}{autotracking}{trackingport}{mapstyle}{scale}&s={startingitemstring}&p={sprite}&r={epoch}'
 			.replace('{world}', world)
 			.replace('{entrance}', entrance)
@@ -512,7 +512,7 @@ function showToast() {
 function togglediv(x) {
 	var d = document.getElementById(x + "div");
 	var a = document.getElementById(x + "arrow");
-	
+
 	if (d.style.display === "block") {
 		d.style.display = "none";
 		a.innerHTML = "&#9660;";
@@ -525,7 +525,7 @@ function togglediv(x) {
 function togglereleasediv(x) {
 	var d = document.getElementById("release" + x);
 	var a = document.getElementById("arrow" + x);
-	
+
 	if (d.style.display === "block") {
 		d.style.display = "none";
 		a.innerHTML = "&#9660;";
