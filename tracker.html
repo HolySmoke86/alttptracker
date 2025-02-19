@@ -42,7 +42,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png" />
   </head>
 
-  <body style="background-color: black">
+  <body style="background-color: black" oncontextmenu="return false;">
     <div id="app" class="row" style="display: none">
       <div id="tracker" class="row">
         <div id="maintracker" class="cell">
@@ -717,7 +717,6 @@
                   </div>
                   <div class="cell">
                     <div class="smitem motherbrain active"onClick="toggle('motherbrain')" onMouseover="findItems(['motherbrain'])" onMouseout="unhighlightAll()"></div>
-                    
                   </div>
                   <div class="cell">
                     <div class="item ganon" onClick="toggle('ganon')" onMouseover="findItems(['ganon'])" onMouseout="unhighlightAll()"></div>
@@ -1155,7 +1154,7 @@
                 <div id="locationMap18" onClick="toggle_chest(18)" onMouseover="highlight(18)" onMouseout="unhighlight(18)" oncontextmenu="rightClickLocation(18); return false;"></div>
                 <div id="locationMap19" onClick="toggle_chest(19)" onMouseover="highlight(19)" onMouseout="unhighlight(19)" oncontextmenu="rightClickLocation(19); return false;"></div>
                 <div id="locationMap20" onClick="toggle_chest(20)" onMouseover="highlight(20)" onMouseout="unhighlight(20)" oncontextmenu="rightClickLocation(20); return false;"></div>
-  
+
                 <div id="locationMap23" onClick="toggle_chest(23)" onMouseover="highlight(23)" onMouseout="unhighlight(23)" oncontextmenu="rightClickLocation(23); return false;"></div>
                 <div id="locationMap24" onClick="toggle_chest(24)" onMouseover="highlight(24)" onMouseout="unhighlight(24)" oncontextmenu="rightClickLocation(24); return false;"></div>
                 <div id="locationMap25" onClick="toggle_chest(25)" onMouseover="highlight(25)" onMouseout="unhighlight(25)" oncontextmenu="rightClickLocation(25); return false;"></div>
@@ -1182,7 +1181,7 @@
                 <div id="locationMap46" onClick="toggle_chest(46)" onMouseover="highlight(46)" onMouseout="unhighlight(46)" oncontextmenu="rightClickLocation(46); return false;"></div>
                 <div id="locationMap47" onClick="toggle_chest(47)" onMouseover="highlight(47)" onMouseout="unhighlight(47)" oncontextmenu="rightClickLocation(47); return false;"></div>
                 <div id="locationMap48" onClick="toggle_chest(48)" onMouseover="highlight(48)" onMouseout="unhighlight(48)" oncontextmenu="rightClickLocation(48); return false;"></div>
-  
+
                 <div id="mapItemDiv_light">
                   <div id="locationMap63" onClick="toggle_chest(63)" onMouseover="highlight(63)" onMouseout="unhighlight(63)" oncontextmenu="rightClickLocation(63); return false;"></div>
                   <div id="locationMap65" onClick="toggle_chest(65)" onMouseover="highlight(65)" onMouseout="unhighlight(65)" oncontextmenu="rightClickLocation(65); return false;"></div>
@@ -1326,7 +1325,7 @@
                   <div id="entranceMap83"></div>
                   <div id="entranceMap84"></div>
                   <div id="entranceMap85"></div>
-  
+
               <div id="entranceSummary" onClick="LoadEntranceSummary()" title="Connector Summary"><img src="./images/interface/summary.png" /></div>
               <div id="connectorStop" onClick="StopAConnector()" title="Cancel Connector"><img src="./images/interface/cancel.png" /></div>
             </div>
@@ -1453,7 +1452,7 @@
           <div id="informationDiv" style="width: 100%; height: 100%; position: absolute; top: 0; left: 8; z-index: 0; visibility: hidden; pointer-events: none;"></div>
         </div>
       </div>
-      
+
     </div>
 
     <div class="modal fade" id="entranceModal" aria-hidden="true" style="width: 884px; height: 100%; background-color: rgb(0,0,0,.3); z-index: 3; position: absolute; top: 0px; left: 456px; display: none;" onclick="hideEntranceModal()">
