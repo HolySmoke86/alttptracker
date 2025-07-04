@@ -33,6 +33,7 @@
         insertHeader();
       });
       getNextLadderRace();
+      setInterval(() => { getNextLadderRace(); }, 60 * 60 * 1000);
     </script>
   </head>
 
