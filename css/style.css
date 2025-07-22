@@ -474,6 +474,7 @@ div[class*=" bottle"].active-7 { background-image: url(../images/items/bottle_go
 .pendant-2 { background-image: url(../images/overlay/pendant2.png); }
 
 .smitem {width: 64; height: 64; background-size: 80%; background-repeat: no-repeat; background-position: center;}
+.smtext { background-repeat: no-repeat; }
 
 .charge { background-image: url(../images/items/charge.png); }
 .etank { background-image: url(../images/items/etank.png); }
@@ -505,16 +506,16 @@ div[class*=" bottle"].active-7 { background-image: url(../images/items/bottle_go
 #tracker .draygon { background-image: url(../images/dungeons/draygon.png); opacity: 1; }
 #tracker .ridley { background-image: url(../images/dungeons/ridley.png); opacity: 1; }
 
-.smkey1 { width: 32px; height: 32px; background-size: 32px; top: 0; left: 1; background-image: url(../images/dungeons/sm_keycard_level1.png); }
-.smkey2 { width: 32px; height: 32px; background-size: 32px; top: 0; left: 31; background-image: url(../images/dungeons/sm_keycard_level2.png); }
-.smkeyb { width: 32px; height: 32px; background-size: 32px; top: 32; left: 1; background-image: url(../images/dungeons/sm_keycard_boss.png); }
+#tracker .smkey1 { width: 32px; height: 32px; background-size: 90%; background-position: right bottom; top: 0; left: 1; background-image: url(../images/dungeons/sm_keycard_level1.png); }
+#tracker .smkey2 { width: 32px; height: 32px; background-size: 90%; background-position: left bottom; top: 0; left: 31; background-image: url(../images/dungeons/sm_keycard_level2.png); }
+#tracker .smkeyb { width: 32px; height: 32px; background-size: 90%; background-position: right top; top: 32; left: 1; background-image: url(../images/dungeons/sm_keycard_boss.png); }
 
-.smabvmd { width: 32px; height: 32px; background-size: 32px; top: 32; left: 32; background-image: url(../images/dungeons/MD.png); opacity: 0.9;}
-.smabvun { width: 32px; height: 32px; background-size: 32px; top: 32; left: 32; background-image: url(../images/dungeons/UN.png); opacity: 0.9;}
-.smabvws { width: 32px; height: 32px; background-size: 32px; top: 32; left: 32; background-image: url(../images/dungeons/WS.png); opacity: 0.9;}
-.smabvbr { width: 32px; height: 32px; background-size: 32px; top: 32; left: 32; background-image: url(../images/dungeons/BR.png); opacity: 0.9;}
-.smabvcr { width: 32px; height: 32px; background-size: 32px; top: 32; left: 32; background-image: url(../images/dungeons/CR.png); opacity: 0.9;}
-.smabvln { width: 32px; height: 32px; background-size: 32px; top: 32; left: 32; background-image: url(../images/dungeons/LN.png); opacity: 0.9;}
+.smabvmd { width: 32px; height: 32px; background-size: 90%; top: 32; left: 32; background-image: url(../images/dungeons/MD.png); opacity: 0.9;}
+.smabvun { width: 32px; height: 32px; background-size: 90%; top: 32; left: 32; background-image: url(../images/dungeons/UN.png); opacity: 0.9;}
+.smabvws { width: 32px; height: 32px; background-size: 90%; top: 32; left: 32; background-image: url(../images/dungeons/WS.png); opacity: 0.9;}
+.smabvbr { width: 32px; height: 32px; background-size: 90%; top: 32; left: 32; background-image: url(../images/dungeons/BR.png); opacity: 0.9;}
+.smabvcr { width: 32px; height: 32px; background-size: 90%; top: 32; left: 32; background-image: url(../images/dungeons/CR.png); opacity: 0.9;}
+.smabvln { width: 32px; height: 32px; background-size: 90%; top: 32; left: 32; background-image: url(../images/dungeons/LN.png); opacity: 0.9;}
 #tracker .smboss.active { opacity: .25; }
 #tracker .motherbrain.active { opacity: .25; }
 
