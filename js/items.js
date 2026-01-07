@@ -46,10 +46,19 @@
     trackinghost: query.a.slice(6, 100),
     startingitems: query.s,
     sprite: query.p.replace("#", "").replace("!", ""),
+    bgcolor: query.bgcolor,
   };
 
   window.flags.trackingport = parseInt(flags.trackingport);
   window.flags.trackinghost = flags.trackinghost || "localhost";
+
+  if (document.readyState == 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementsByTagName('body')[0].style.backgroundColor = flags.bgcolor;
+    });
+  } else {
+    document.getElementsByTagName('body')[0].style.backgroundColor = flags.bgcolor;
+  }
 
   window.maptype = query.map;
 
@@ -60,7 +69,7 @@
     const currentFlags = flagsOverride || flags;
     let chestCounts = {};
     let keyCounts = {};
-    
+
     for (const dungeon of window.bigDungeonData) {
       const dungeonInfo = dungeon.totalLocations;
       var count = dungeonInfo.default;
@@ -99,7 +108,7 @@
       chestCounts[dungeon.id] = count;
       keyCounts[dungeon.id] = keys;
     }
-    
+
     return { chestCounts, keyCounts };
   };
 

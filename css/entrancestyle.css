@@ -10,6 +10,8 @@ body {
   box-sizing: border-box;
 }
 
+table { color: inherit; }
+
 .row:before,
 .row:after {
   content: " ";
@@ -219,10 +221,13 @@ body {
 
 #tracker .item,
 #tracker .boss {
-  opacity: 0.25;
+  opacity: .25;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 #tracker .prize {
-  opacity: 0.66;
+  opacity: .66;
   border: 2px solid;
   border-radius: 100%;
   background-color: #000;
@@ -586,7 +591,7 @@ body {
   position: absolute;
   bottom: 0px;
   color: white;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   font-size: 12px;
   text-align: center;
 }
@@ -1286,8 +1291,7 @@ div[class*=" bottle"].active-7 {
 
 .tab {
   padding: 4px;
-  border: 2px solid white;
-  color: blue;
+  border: 2px solid black;
   user-select: none;
   cursor: pointer;
 }
@@ -2456,6 +2460,7 @@ div[class*=" bottle"].active-7 {
   font-size: 22px;
   float: left;
   margin-right: 3px;
+  margin-bottom: 3px;
 }
 
 .entranceModalGeneralInner {
@@ -2467,5 +2472,5 @@ div[class*=" bottle"].active-7 {
 }
 
 .entranceModalGeneralInnerLarge {
-  height: 120px;
+  height: 126px;
 }

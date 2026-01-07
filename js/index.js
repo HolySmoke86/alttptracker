@@ -107,6 +107,9 @@ function load_cookie() {
           document.getElementById("alwaysshowbigkeys").checked = alwaysDisplay[3] === "1";
           document.getElementById("alwaysshowhcct").checked = alwaysDisplay[4] === "1";
           break;
+        case "bg":
+          document.getElementById("bgcolor").value = setting[1];
+          break;
       }
     });
   }
@@ -285,6 +288,7 @@ function launch_tracker() {
   var showbigkeys = document.getElementById("alwaysshowbigkeys").checked;
   var showhcct = document.getElementById("alwaysshowhcct").checked;
   var alwaysdisplay = (showmaps ? "1" : "0") + (showcompasses ? "1" : "0") + (showsmallkeys ? "1" : "0") + (showbigkeys ? "1" : "0") + (showhcct ? "1" : "0");
+  var bgcolor = document.getElementById("bgcolor").value;
 
   var width = map === "M" ? 1340 : 448;
 
@@ -334,14 +338,14 @@ function launch_tracker() {
   }
 
   if (document.getElementById("remembersettings").checked == true) {
-    var settings = "m-" + map + "|cc-" + chestcolor + "|s-" + sphere + "|a-" + autotracking + trackingport + "|ah-" + trackinghost + "|p-" + sprite + "|ms-" + mapStyle + "|sc-" + scale + "|ad-" + alwaysdisplay;
+    var settings = "m-" + map + "|cc-" + chestcolor + "|s-" + sphere + "|a-" + autotracking + trackingport + "|ah-" + trackinghost + "|bg-" + bgcolor + "|p-" + sprite + "|ms-" + mapStyle + "|sc-" + scale + "|ad-" + alwaysdisplay;
     document.cookie = "settings=" + settings + "; expires=Sat, 8 Feb 2027 12:00:00 UTC";
   } else {
     document.cookie = "settings=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
   }
 
   var trackerWindow = window.open(
-    "tracker.html?f={world}{entrance}{door}{overworld}{boss}{enemy}{pseudoboots}{unknown}{glitches}{shuffledmaps}{shuffledcompasses}{shuffledsmallkeys}{shuffledbigkeys}{shopsanity}{ambrosia}{nonprogressivebows}{activatedflute}{bonkshuffle}{goal}{tower}{towercrystals}{ganon}{ganoncrystals}{swords}{prizeshuffle}{mirrorscroll}&d={map}{chestcolor}{spoiler}{sphere}{mapstyle}{scale}{alwaysdisplay}&a={autotracking}{trackingport}{trackinghost}&s={startingitemstring}&p={sprite}&r={epoch}"
+    "tracker.html?f={world}{entrance}{door}{overworld}{boss}{enemy}{pseudoboots}{unknown}{glitches}{shuffledmaps}{shuffledcompasses}{shuffledsmallkeys}{shuffledbigkeys}{shopsanity}{ambrosia}{nonprogressivebows}{activatedflute}{bonkshuffle}{goal}{tower}{towercrystals}{ganon}{ganoncrystals}{swords}{prizeshuffle}{mirrorscroll}&d={map}{chestcolor}{spoiler}{sphere}{mapstyle}{scale}{alwaysdisplay}&a={autotracking}{trackingport}{trackinghost}&s={startingitemstring}&p={sprite}&bgcolor={bgcolor}&r={epoch}"
       .replace("{world}", world)
       .replace("{entrance}", entrance)
       .replace("{door}", door)
@@ -380,6 +384,7 @@ function launch_tracker() {
       .replace("{alwaysdisplay}", alwaysdisplay)
       .replace("{startingitemstring}", startingitemstring)
       .replace("{sprite}", sprite)
+      .replace("{bgcolor}", bgcolor)
       .replace("{epoch}", Date.now()),
     //.replace('{compact}', (map === "C" ? '&map=C' : '')),
     "",
